@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Hodie · Thank You, Saint Expedite</title>
-<meta name="description" content="A thank-you notice to Saint Expedite: asked for a visa stamp within 24 hours, got one dated more than two weeks before the ask. ประกาศขอบคุณนักบุญเอ็กซ์เปดิต">
+<meta name="description" content="A thank-you notice to Saint Expedite, posted today, Monday 9 November 2026. Asked Friday 6 November for a visa stamp within 24 hours; the stamp is dated Thursday 22 October, 15 days before the ask. ประกาศขอบคุณนักบุญเอ็กซ์เปดิต">
 <meta property="og:title" content="HODIE · Thank you, Saint Expedite">
-<meta property="og:description" content="Asked for it within 24 hours. The stamp is dated more than two weeks before I asked. ขอบคุณ นักบุญเอ็กซ์เปดิต">
+<meta property="og:description" content="Asked Friday 6 November for a visa stamp within 24 hours. The stamp is dated Thursday 22 October, 15 days before I asked. Posted today, Monday 9 November 2026. ขอบคุณ นักบุญเอ็กซ์เปดิต">
 <meta property="og:image" content="https://nanobotco.github.io/hodie/card.jpg">
 <meta property="og:image:alt" content="HODIE in big cream letters over a struck-out CRAS, a painting of Saint Expedite in a gold arch, and a red stamp reading 22 OCT 2026">
 <meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
@@ -78,6 +78,25 @@ nav .links a{text-decoration:none;white-space:nowrap;opacity:.85}nav .links a:ho
 @keyframes burst{0%{transform:translate(-50%,-50%) scale(.3);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(1.4) rotate(var(--r));opacity:0}}
 .stompct{position:absolute;right:20px;bottom:16px;z-index:4;font:700 13px/1 var(--serif);letter-spacing:.14em;text-transform:uppercase;color:var(--ink);background:var(--gold);padding:8px 12px;border-radius:99px}
 @media(max-width:860px){.hero{grid-template-columns:1fr;min-height:auto}.hero .copy{padding:36px 20px 10px}.frame{width:min(70vw,320px);margin:20px auto 70px}.crow{width:120px;top:6%}}
+/* two todays */
+.todays{background:var(--gold);padding:clamp(56px,8vw,100px) 0}
+.todays h2{font-size:clamp(60px,10vw,140px);margin:10px 0 12px}
+.todays .sub{max-width:40em;font-size:20px;margin:0 0 30px}
+.tgrid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:760px){.tgrid{grid-template-columns:1fr}}
+.tcard{border:0;text-align:left;padding:26px 26px 24px;display:flex;flex-direction:column;gap:6px;box-shadow:12px 12px 0 var(--ink);transition:transform .3s cubic-bezier(.3,1.7,.5,1);font-family:var(--serif)}
+.tcard:active,.tcard.pop{transform:rotate(-1.5deg) scale(1.02)}
+.tcard.mine{background:var(--ink);color:var(--gold)}
+.tcard.yours{background:var(--red);color:var(--cream)}
+.tcard .tl{font:700 14px/1 var(--serif);letter-spacing:.2em;text-transform:uppercase}
+.tcard .tw{font:400 clamp(34px,4vw,54px)/1 var(--disp);text-transform:uppercase;margin-top:10px}
+.tcard .td{font:400 clamp(60px,8.4vw,124px)/.92 var(--disp);text-transform:uppercase}
+[data-lang=th] .tcard .tw,[data-lang=th] .tcard .td{font-family:var(--th-disp);font-weight:800;line-height:1.15}
+.tcard .tw .th,.tcard .td .th{font-family:inherit}
+.tcard .tclock{font:400 clamp(28px,3vw,40px)/1 var(--disp);letter-spacing:.04em;opacity:.9;font-variant-numeric:tabular-nums}
+.tcard .ts{font-size:18px;line-height:1.45;margin-top:10px;color:var(--cream)}
+.readk{margin-top:8px;color:var(--gold)}
+.readk .rtoday{letter-spacing:.12em}
 /* marquee */
 .marq{background:var(--ink);color:var(--gold);overflow:hidden;white-space:nowrap;border-block:4px solid var(--gold);cursor:pointer;user-select:none}
 .marq .track{display:inline-block;font:400 clamp(30px,4.6vw,60px)/1.25 var(--disp);letter-spacing:.03em;animation:marq 38s linear infinite reverse}
@@ -127,6 +146,7 @@ section{position:relative}
 .notice .punch{font:700 italic 24px/1.2 var(--serif);text-align:center;margin:18px 0}
 .notice .th.punch{font-family:var(--th);font-style:normal}
 .notice .sig{text-align:right;font-style:italic;margin-top:18px}
+.notice .readline{text-align:right;font-size:16px;color:var(--red);font-weight:700;margin:0}
 .notice .seal{position:absolute;right:-22px;top:-22px;width:92px;height:92px;border-radius:50%;background:radial-gradient(circle at 35% 35%,#ef3a43,var(--red) 55%,var(--deep));color:var(--gold);display:grid;place-items:center;font:400 19px/1 var(--disp);letter-spacing:.04em;box-shadow:3px 4px 0 rgba(0,0,0,.35);transform:rotate(14deg);transition:transform .5s cubic-bezier(.3,1.8,.5,1)}
 .notice .seal{}@media(max-width:700px){.notice .seal{right:-6px;top:-30px;width:78px;height:78px;font-size:16px}}
 .notice.pressed .seal{transform:rotate(374deg) scale(1.15)}
@@ -225,6 +245,7 @@ footer .disp{font-size:64px;color:var(--gold);cursor:pointer;display:inline-bloc
   <div class="wrap">
     <button class="mark" id="mark" aria-label="Hodie"><span>H</span><span>O</span><span>D</span><span>I</span><span>E</span></button>
     <div class="links">
+      <a href="#todays"><span class="en">Todays</span><span class="th">วันนี้</span></a>
       <a href="#record"><span class="en">Record</span><span class="th">สถิติ</span></a>
       <a href="#ex"><span class="en">Ex</span><span class="th">เอ็กซ์</span></a>
       <a href="#clock"><span class="en">Clock</span><span class="th">นาฬิกา</span></a>
@@ -239,12 +260,13 @@ footer .disp{font-size:64px;color:var(--gold);cursor:pointer;display:inline-bloc
 
 <header class="hero" id="top">
   <div class="copy">
-    <p class="kick en">A thank-you notice · Chiang Mai · November 2026</p>
-    <p class="kick th">ประกาศขอบคุณ · เชียงใหม่ · พฤศจิกายน 2569</p>
+    <p class="kick en">Posted today, Monday 9 November 2026 · Chiang Mai</p>
+    <p class="kick th">โพสต์วันนี้ วันจันทร์ที่ 9 พฤศจิกายน 2569 · เชียงใหม่</p>
+    <p class="kick readk"><span class="en">Read today, </span><span class="th">อ่านวันนี้ </span><span class="rtoday">…</span></p>
     <div class="cras" aria-label="cras, tomorrow, crossed out">CRAS</div>
     <h1 class="big" aria-label="Hodie">HODIE</h1>
-    <p class="lede en">Thank you, Saint Expedite. I asked for my visa stamp <b>within 24 hours</b>. The stamp is dated <b>22 October</b>, more than two weeks before I asked.</p>
-    <p class="lede th">ขอบคุณ นักบุญเอ็กซ์เปดิต ฉันขอให้ประทับตราวีซ่า<b>ภายใน 24 ชั่วโมง</b> ตราที่ได้ลงวันที่ <b>22 ตุลาคม</b> ก่อนวันที่ฉันขอไปสองสัปดาห์กว่า</p>
+    <p class="lede en">Thank you, Saint Expedite. On <b>Friday 6 November</b> I asked for my visa stamp <b>within 24 hours</b>. The stamp is dated <b>Thursday 22 October</b>: 15 days before I asked.</p>
+    <p class="lede th">ขอบคุณ นักบุญเอ็กซ์เปดิต <b>วันศุกร์ที่ 6 พฤศจิกายน</b> ฉันขอให้ประทับตราวีซ่า<b>ภายใน 24 ชั่วโมง</b> ตราที่ได้ลงวันที่ <b>วันพฤหัสบดีที่ 22 ตุลาคม</b> ก่อนวันที่ฉันขอ 15 วัน</p>
     <div class="ctas">
       <a class="btn" href="#record"><span class="en">See the record →</span><span class="th">ดูสถิติ →</span></a>
       <a class="btn ghost" href="#today"><span class="en">Today's stamp →</span><span class="th">ตราของวันนี้ →</span></a>
@@ -270,6 +292,31 @@ footer .disp{font-size:64px;color:var(--gold);cursor:pointer;display:inline-bloc
   <div class="stompct" id="stompct"><span class="en">Crows stomped: </span><span class="th">เหยียบอีกาไปแล้ว: </span><b id="stomps">0</b></div>
 </header>
 
+<section class="todays" id="todays">
+  <div class="wrap">
+    <p class="kick en">Two todays</p><p class="kick th">วันนี้ สองวัน</p>
+    <h2><span class="en">Hodie. Hodie.</span><span class="th">วันนี้ วันนี้</span></h2>
+    <p class="sub en">Hodie is Latin for today. This page has two of them: the today I post it, and the today you read it.</p>
+    <p class="sub th">Hodie (โฮดิเอ) เป็นภาษาละติน แปลว่า วันนี้ หน้านี้มีวันนี้สองวัน วันนี้ที่ฉันโพสต์ และวันนี้ที่คุณอ่าน</p>
+    <div class="tgrid">
+      <button class="tcard mine" type="button">
+        <span class="tl"><span class="en">My today</span><span class="th">วันนี้ของฉัน</span></span>
+        <span class="tw"><span class="en">Monday</span><span class="th">วันจันทร์</span></span>
+        <span class="td"><span class="en">9 Nov 2026</span><span class="th">9 พ.ย. 2569</span></span>
+        <span class="ts en">Chiang Mai. I post this today. Today the stamp is 18 days old, and my ask is 3 days old.</span>
+        <span class="ts th">เชียงใหม่ ฉันโพสต์หน้านี้วันนี้ วันนี้ตราประทับอายุ 18 วัน และคำขอของฉันอายุ 3 วัน</span>
+      </button>
+      <button class="tcard yours" type="button">
+        <span class="tl"><span class="en">Your today</span><span class="th">วันนี้ของคุณ</span></span>
+        <span class="tw" id="ywd">…</span>
+        <span class="td" id="yd">…</span>
+        <span class="tclock" id="yclock"></span>
+        <span class="ts" id="ys"></span>
+      </button>
+    </div>
+  </div>
+</section>
+
 <div class="marq" id="marq" title="tap to flip time">
   <div class="track" id="track"></div>
 </div>
@@ -279,8 +326,8 @@ footer .disp{font-size:64px;color:var(--gold);cursor:pointer;display:inline-bloc
     <div class="secthead">
       <p class="kick en" style="color:var(--gold)">The record</p><p class="kick th" style="color:var(--gold)">สถิติ</p>
       <h2><span class="en">Stamped <em>before</em> I asked</span><span class="th">ประทับตรา<em style="color:var(--gold);font-style:normal">ก่อน</em>ที่ฉันจะขอ</span></h2>
-      <p class="sub en">Read it right to left. The ask is in November. The answer is in October.</p>
-      <p class="sub th">อ่านจากขวาไปซ้าย คำขออยู่เดือนพฤศจิกายน คำตอบอยู่เดือนตุลาคม</p>
+      <p class="sub en">Read it right to left. Friday 6 November, 19:12, Chiang Mai, in our team chat: <q>Shouldn't we have heard about our visas by today?</q> That Friday I asked him. The answer was already stamped, Thursday 22 October, 15 days earlier.</p>
+      <p class="sub th">อ่านจากขวาไปซ้าย วันศุกร์ที่ 6 พฤศจิกายน 19:12 น. เชียงใหม่ ในแชทของทีม: <q>Shouldn't we have heard about our visas by today?</q> (เราน่าจะได้ข่าววีซ่าภายในวันนี้แล้วไม่ใช่เหรอ) วันศุกร์นั้นฉันขอท่าน คำตอบประทับไว้แล้ว วันพฤหัสบดีที่ 22 ตุลาคม ก่อนหน้า 15 วัน</p>
     </div>
     <div class="strip" id="strip" role="button" aria-label="Timeline: asked in early November, stamp dated 22 October. Tap to replay.">
       <span class="tap"><span class="en">Tap to rewind</span><span class="th">แตะเพื่อย้อนเวลา</span></span>
@@ -290,13 +337,13 @@ footer .disp{font-size:64px;color:var(--gold);cursor:pointer;display:inline-bloc
           <filter id="ink"><feTurbulence type="fractalNoise" baseFrequency=".9" numOctaves="2" seed="19"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 -2.2 1.5"/><feComposite in="SourceGraphic" operator="in"/></filter>
         </defs>
         <g id="ticks"></g>
-        <path id="arcshadow" d="M789 402 C 770 0, 320 0, 290 232" fill="none" stroke="#140b09" stroke-width="26" stroke-linecap="round" opacity=".12" transform="translate(8 8)"/>
-        <path id="arc" d="M789 402 C 770 0, 320 0, 290 232" fill="none" stroke="#f4b52c" stroke-width="20" stroke-linecap="round" marker-end="url(#head)"/>
-        <g id="arrowlbl"><rect id="arrowbox" x="400" y="62" width="290" height="70" fill="#140b09"/><text x="545" y="115" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="52" fill="#f4b52c" id="arrowtxt">2+ WEEKS BACK</text></g>
-        <g id="askpin"><circle cx="789" cy="430" r="20" fill="#140b09"/><circle cx="789" cy="430" r="8" fill="#f4b52c"/>
-          <text x="814" y="318" font-family="Anton,Impact,sans-serif" font-size="66" fill="#140b09" id="asklbl">ASKED</text>
-          <text x="814" y="360" font-family="Fraunces,Georgia,serif" font-weight="700" font-size="30" fill="#d7141f" id="asksub">within 24 h</text>
-          <rect x="789" y="398" width="33" height="14" fill="#d7141f"/></g>
+        <path id="arcshadow" d="M757 402 C 740 0, 320 0, 290 232" fill="none" stroke="#140b09" stroke-width="26" stroke-linecap="round" opacity=".12" transform="translate(8 8)"/>
+        <path id="arc" d="M757 402 C 740 0, 320 0, 290 232" fill="none" stroke="#f4b52c" stroke-width="20" stroke-linecap="round" marker-end="url(#head)"/>
+        <g id="arrowlbl"><rect id="arrowbox" x="400" y="62" width="290" height="70" fill="#140b09"/><text x="545" y="115" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="52" fill="#f4b52c" id="arrowtxt">15 DAYS BACK</text></g>
+        <g id="askpin"><circle cx="757" cy="430" r="20" fill="#140b09"/><circle cx="757" cy="430" r="8" fill="#f4b52c"/>
+          <text x="782" y="318" font-family="Anton,Impact,sans-serif" font-size="66" fill="#140b09" id="asklbl">ASKED</text>
+          <text x="782" y="360" font-family="Fraunces,Georgia,serif" font-weight="700" font-size="30" fill="#d7141f" id="asksub">within 24 h</text>
+          <rect x="757" y="398" width="33" height="14" fill="#d7141f"/></g>
         <g id="stamp" filter="url(#ink)">
           <rect x="100" y="246" width="350" height="156" fill="none" stroke="#d7141f" stroke-width="11"/>
           <rect x="116" y="262" width="318" height="124" fill="none" stroke="#d7141f" stroke-width="4"/>
@@ -307,10 +354,10 @@ footer .disp{font-size:64px;color:var(--gold);cursor:pointer;display:inline-bloc
     </div>
     <div class="ticker"><div class="d" id="tick">22 OCT</div><div class="l"><span class="en">The calendar, running the way he runs it.</span><span class="th">ปฏิทิน เดินแบบที่ท่านเดิน</span></div></div>
     <div class="slab">
-      <div><b>24<small>H</small></b><span class="en">what I asked for</span><span class="th">ที่ฉันขอ</span></div>
-      <div><b>22<small>OCT</small></b><span class="en">date on the stamp</span><span class="th">วันที่บนตราประทับ</span></div>
-      <div><b>2</b><span class="en">passports: mine and Michael's</span><span class="th">พาสปอร์ต: ของฉันกับของไมเคิล</span></div>
-      <div><b id="age">18</b><span class="en">days that stamp has waited for us, as of today</span><span class="th">วันที่ตรานั้นรอเราอยู่ นับถึงวันนี้</span></div>
+      <div><b>6<small>NOV</small></b><span class="en">Friday, 19:12: the day I asked, within 24 hours</span><span class="th">วันศุกร์ 19:12 น. วันที่ฉันขอ ภายใน 24 ชั่วโมง</span></div>
+      <div><b>22<small>OCT</small></b><span class="en">Thursday: the date on the stamp</span><span class="th">วันพฤหัสบดี: วันที่บนตราประทับ</span></div>
+      <div><b>15<small>D</small></b><span class="en">days the stamp came before the ask</span><span class="th">วันที่ตราประทับมาก่อนคำขอ</span></div>
+      <div><b id="age">18</b><span class="en">days: the stamp's age today, your today, <span class="rtoday">…</span></span><span class="th">วัน: อายุตราประทับวันนี้ วันนี้ของคุณ <span class="rtoday">…</span></span></div>
     </div>
 
     <article class="notice" id="notice" aria-label="Thank-you notice">
@@ -318,19 +365,23 @@ footer .disp{font-size:64px;color:var(--gold);cursor:pointer;display:inline-bloc
       <div class="mast"><span class="en">Notices · Thanks</span><span class="th">ประกาศ · ขอบคุณ</span></div>
       <div class="en">
         <h3>Thank you, Saint Expedite</h3>
-        <p>I asked for my Non-B visa to be stamped "within the next 24 hours." The passport isn't even back in my hands yet. But the Non-B photographed inside it is stamped 22 October. That's more than two weeks before I asked.</p>
+        <p>Friday, 6 November, 19:12, I typed into our team chat: "Shouldn't we have heard about our visas by today?" That Friday I asked Saint Expedite to get my Non-B visa stamped "within the next 24 hours."</p>
+        <p>Today is Monday, 9 November 2026. The passport isn't back in my hands yet. But the Non-B photographed inside it is stamped Thursday, 22 October. Fifteen days before I asked.</p>
         <p class="punch">Not fast. Retroactive.</p>
         <p>He did it for Michael too. Two passports, zero waiting, one very confused calendar.</p>
-        <p>I know a lot about visas. This has got to be a record, even for Expedite. Hodie.</p>
-        <p class="sig">NaN, Chiang Mai</p>
+        <p>I know a lot about visas. This has got to be a record, even for Expedite. Hodie means today, and I'm saying it today.</p>
+        <p class="sig">NaN, Chiang Mai, today, Monday 9 November 2026</p>
+        <p class="readline">You're reading it today: <span class="rtoday">…</span>.</p>
       </div>
       <div class="th">
         <h3>ขอบคุณ นักบุญเอ็กซ์เปดิต</h3>
-        <p>ฉันขอให้ประทับตราวีซ่า Non-B "ภายใน 24 ชั่วโมงนี้" พาสปอร์ตยังไม่ทันกลับมาถึงมือ แต่วีซ่าในรูปถ่ายข้างในเล่ม ประทับตราลงวันที่ 22 ตุลาคม ก่อนวันที่ฉันขอไปสองสัปดาห์กว่า</p>
+        <p>วันศุกร์ที่ 6 พฤศจิกายน เวลา 19:12 น. ฉันพิมพ์ในแชทของทีมว่า "Shouldn't we have heard about our visas by today?" (เราน่าจะได้ข่าววีซ่าภายในวันนี้แล้วไม่ใช่เหรอ) วันศุกร์นั้นเอง ฉันขอนักบุญเอ็กซ์เปดิตให้วีซ่า Non-B ของฉันได้ประทับตรา "ภายใน 24 ชั่วโมงนี้"</p>
+        <p>วันนี้คือวันจันทร์ที่ 9 พฤศจิกายน 2569 พาสปอร์ตยังไม่กลับมาถึงมือ แต่วีซ่า Non-B ในรูปถ่ายข้างในเล่ม ประทับตราลงวันพฤหัสบดีที่ 22 ตุลาคม ก่อนวันที่ฉันขอ 15 วัน</p>
         <p class="punch">ไม่ใช่แค่เร็ว แต่ย้อนเวลา</p>
         <p>ท่านทำให้ไมเคิลด้วย สองพาสปอร์ต ไม่ต้องรอสักวัน ปฏิทินงงไปหนึ่งเล่ม</p>
-        <p>เรื่องวีซ่า ฉันรู้เยอะ ครั้งนี้ต้องเป็นสถิติแน่ ๆ แม้แต่สำหรับเอ็กซ์เปดิตเอง Hodie (โฮดิเอ แปลว่า วันนี้)</p>
-        <p class="sig">แนน, เชียงใหม่</p>
+        <p>เรื่องวีซ่า ฉันรู้เยอะ ครั้งนี้ต้องเป็นสถิติแน่ ๆ แม้แต่สำหรับเอ็กซ์เปดิตเอง Hodie (โฮดิเอ) แปลว่า วันนี้ และฉันพูดมันวันนี้</p>
+        <p class="sig">แนน, เชียงใหม่, วันนี้ วันจันทร์ที่ 9 พฤศจิกายน 2569</p>
+        <p class="readline">คุณอ่านมันวันนี้: <span class="rtoday">…</span></p>
       </div>
     </article>
   </div>
@@ -524,6 +575,8 @@ const MON_EN=['JAN','FEB','MAR','APR','MAY','JUN','JUL','AUG','SEP','OCT','NOV',
 const fmt=d=>lang==='th'?d.toLocaleDateString('th-TH',{day:'numeric',month:'short'}):d.getDate()+' '+MON_EN[d.getMonth()];
 const fmtY=d=>lang==='th'?d.toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'}):d.getDate()+' '+MON_EN[d.getMonth()]+' '+d.getFullYear();
 const dayStart=d=>new Date(d.getFullYear(),d.getMonth(),d.getDate());
+const fmtLong=d=>d.toLocaleDateString(lang==='th'?'th-TH':'en-GB',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+const POSTED=new Date(2026,10,9);
 const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
 let stomps=0;try{stomps=+localStorage.getItem('hodie-stomps')||0}catch(e){}
 
@@ -563,7 +616,9 @@ const tk=$('#ticks');const N=29,x0=50,x1=950,dx=(x1-x0)/(N-1);let s='';
 s+=`<line x1="30" y1="430" x2="975" y2="430" stroke="#140b09" stroke-width="7"/>`;
 for(let i=0;i<N;i++){const d=new Date(2026,9,15+i),x=x0+i*dx,big=d.getDate()===22&&d.getMonth()===9;
   s+=`<line x1="${x}" y1="${big?404:420}" x2="${x}" y2="${big?456:440}" stroke="${big?'#d7141f':'#140b09'}" stroke-width="${big?6:2.5}"/>`;
-  if(i%2===1||big)s+=`<text x="${x}" y="${big?494:482}" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="${big?40:26}" fill="${big?'#d7141f':'#140b09'}">${d.getDate()}</text>`;}
+  const ask=i===22,post=i===25;
+  if(post)s+=`<rect x="${x-24}" y="458" width="48" height="34" fill="#f4b52c"/><rect x="${x-68}" y="512" width="136" height="36" fill="#140b09"/><text x="${x}" y="539" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="24" fill="#f4b52c" id="postlbl">MY TODAY</text>`;
+  if(i%2===1||big||ask)s+=`<text x="${x}" y="${big||ask?494:482}" text-anchor="middle" font-family="Anton,Impact,sans-serif" font-size="${big||ask?40:26}" fill="${big?'#d7141f':'#140b09'}">${d.getDate()}</text>`;}
 s+=`<text x="${x0}" y="540" font-family="Anton,Impact,sans-serif" font-size="36" fill="#140b09" id="moct">OCT</text>`;
 s+=`<text x="${x0+17*dx}" y="540" font-family="Anton,Impact,sans-serif" font-size="36" fill="#140b09" id="mnov">NOV</text>`;
 s+=`<line x1="${x0+16.5*dx}" y1="410" x2="${x0+16.5*dx}" y2="548" stroke="#140b09" stroke-width="2" stroke-dasharray="4 5"/>`;
@@ -573,25 +628,24 @@ const strip=$('#strip');let tickTimer;
 function play(){
   strip.classList.remove('go','shake');void strip.offsetWidth;strip.classList.add('go');
   clearInterval(tickTimer);
-  const from=new Date(2026,10,7),steps=16;let k=0;$('#tick').textContent=fmt(from);
+  const from=new Date(2026,10,6),steps=15;let k=0;$('#tick').textContent=fmt(from);
   if(reduce){$('#tick').textContent=fmt(STAMP);return}
   tickTimer=setInterval(()=>{k++;const d=new Date(from);d.setDate(from.getDate()-k);$('#tick').textContent=fmt(d);if(k>=steps){clearInterval(tickTimer)}},1450/steps);
   setTimeout(()=>strip.classList.add('shake'),1600);
 }
 strip.onclick=play;
 new IntersectionObserver((es,o)=>{es.forEach(e=>{if(e.isIntersecting){play();o.disconnect()}})},{threshold:.45}).observe(strip);
-$('#age').textContent=Math.max(0,Math.round((dayStart(new Date())-STAMP)/864e5));
 $('#notice').onclick=()=>{$('#notice').classList.toggle('pressed')};
 
 /* ex tiles */
 const EX=[
- ['EXPEDITIOUS','รวดเร็วทันใจ','Stamp dated 22 October. Asked in November.','ตราลงวันที่ 22 ตุลาคม ขอเดือนพฤศจิกายน'],
+ ['EXPEDITIOUS','รวดเร็วทันใจ','Asked Friday 6 November. Stamp dated Thursday 22 October.','ขอวันศุกร์ที่ 6 พ.ย. ตราลงวันพฤหัสบดีที่ 22 ต.ค.'],
  ['EXCEPTIONAL','ยอดเยี่ยม','Two passports: mine and Michael’s.','สองพาสปอร์ต ของฉันกับของไมเคิล'],
  ['EXPERT','เชี่ยวชาญ','Patron of urgent causes: the saint you call when a thing has to happen now.','นักบุญองค์อุปถัมภ์เรื่องด่วน เรียกหาท่านเมื่อเรื่องต้องเกิดเดี๋ยวนี้'],
  ['EXEMPLARY','เป็นแบบอย่าง','The crow said cras, tomorrow. He stepped on it and said hodie, today.','อีการ้อง cras พรุ่งนี้ ท่านเหยียบแล้วตอบว่า hodie วันนี้'],
  ['EXCITING','น่าตื่นเต้น','Paid in pound cake, red flowers and a thank-you in public.','ค่าตอบแทนคือ ปอนด์เค้ก ดอกไม้แดง และคำขอบคุณต่อหน้าคนอื่น'],
  ['EXACT','แม่นยำ','Feast day 19 April, the one date nobody argues about.','วันฉลอง 19 เมษายน วันเดียวที่ไม่มีใครเถียง'],
- ['EXPRESS','ด่วนพิเศษ','Asked for 24 hours. Delivered in the past tense.','ขอ 24 ชั่วโมง ได้มาตั้งแต่อดีต'],
+ ['EXPRESS','ด่วนพิเศษ','Asked for 24 hours. Delivered 15 days in the past.','ขอ 24 ชั่วโมง ได้มาย้อนหลัง 15 วัน'],
  ['EXTRAORDINARY','พิเศษสุด','Red roadside shrines all over Réunion, in the Indian Ocean.','ศาลสีแดงริมทางทั่วเกาะเรอูนียง กลางมหาสมุทรอินเดีย'],
  ['EXALTED','สูงส่ง','Holds his cross up high, HODIE written across it.','ชูไม้กางเขนสูง มีคำว่า HODIE เขียนไว้'],
  ['EXCELLENT','ยอดเลิศ','Students in Naples had a "flying novena" (nine days of prayer, squeezed short) for exam week.','นักเรียนที่เนเปิลส์มี "โนวีนาบิน" (สวดเก้าวัน ย่อให้สั้นลง) ไว้ใช้ช่วงสอบ']];
@@ -632,7 +686,7 @@ function stampIt(){
   $('#askwhat').textContent=v;
   const y=dayStart(new Date());y.setDate(y.getDate()-1);
   $('#rs2').textContent=fmtY(y);
-  $('#askwhen').innerHTML=T('Asked today. Stamped yesterday.','ขอวันนี้ ประทับตราเมื่อวาน');
+  $('#askwhen').textContent=T(`Asked today, ${fmtLong(dayStart(new Date()))}. Stamped yesterday.`,`ขอวันนี้ ${fmtLong(dayStart(new Date()))} ประทับตราเมื่อวาน`);
   const s=$('#rstamp');s.classList.remove('on','wob');void s.offsetWidth;s.classList.add('on');
 }
 $('#askform').onsubmit=e=>{e.preventDefault();stampIt()};
@@ -673,13 +727,30 @@ function renderDays(){
 function note(){
   const f=$('#for').value.trim()||T('my visa, stamped before I asked','วีซ่าที่ประทับตราก่อนฉันจะขอ');
   const who=$('#from').value.trim()||T('N.','น.');
-  return T(`Thank you, Saint Expedite, for ${f}. Hodie. ${who}`,`ขอบคุณ นักบุญเอ็กซ์เปดิต สำหรับ${f} Hodie (วันนี้) ${who}`)}
+  const td=fmtLong(dayStart(new Date()));return T(`Thank you, Saint Expedite, for ${f}. Hodie. ${who}, today, ${td}`,`ขอบคุณ นักบุญเอ็กซ์เปดิต สำหรับ${f} Hodie (วันนี้) ${who} วันนี้ ${td}`)}
 const upd=()=>$('#out').textContent=note();
 ['#for','#from'].forEach(s=>$(s).addEventListener('input',upd));
 $('#copy').onclick=async()=>{try{await navigator.clipboard.writeText(note()+'\nnanobotco.github.io/hodie');$('#copy').firstChild.textContent='Copied ✦';$('#copy').lastChild.textContent='คัดลอกแล้ว ✦'}catch(e){}};
 if(navigator.share){$('#share').hidden=false;$('#share').onclick=()=>navigator.share({text:note(),url:'https://nanobotco.github.io/hodie/'}).catch(()=>{})}
 
+function todays(){
+  const now=new Date(),t=dayStart(now);
+  const diff=Math.round((t-POSTED)/864e5),age=Math.round((t-STAMP)/864e5);
+  document.querySelectorAll('.rtoday').forEach(e=>e.textContent=fmtLong(t));
+  $('#ywd').textContent=t.toLocaleDateString(lang==='th'?'th-TH':'en-GB',{weekday:'long'});
+  $('#yd').textContent=lang==='th'?t.toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'}).replace('พ.ศ. ',''):t.getDate()+' '+MON_EN[t.getMonth()]+' '+t.getFullYear();
+  let tz='';try{tz=Intl.DateTimeFormat().resolvedOptions().timeZone||''}catch(e){}
+  $('#yclock').textContent=now.toLocaleTimeString(lang==='th'?'th-TH':'en-GB',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+(tz?' · '+tz.replace(/_/g,' '):'');
+  const rel=diff===0?T('the same today as mine. Hodie, twice.','วันนี้เดียวกับของฉัน Hodie สองครั้ง')
+    :diff>0?T(`${diff} day${diff===1?'':'s'} after my today.`,`${diff} วันหลังวันนี้ของฉัน`)
+    :T(`${-diff} day${diff===-1?'':'s'} before my today. He would approve.`,`${-diff} วันก่อนวันนี้ของฉัน ท่านคงชอบ`);
+  $('#ys').textContent=T(`Wherever you are. You read this today, ${rel} Today the stamp is ${age} days old.`,`ไม่ว่าคุณอยู่ที่ไหน คุณอ่านหน้านี้วันนี้ ${rel} วันนี้ตราประทับอายุ ${age} วัน`);
+  $('#age').textContent=Math.max(0,age);
+}
+setInterval(todays,1000);
+document.querySelectorAll('.tcard').forEach(c=>c.onclick=e=>{c.classList.remove('pop');void c.offsetWidth;c.classList.add('pop');setTimeout(()=>c.classList.remove('pop'),300);const r=c.getBoundingClientRect(),p=$('#todays').getBoundingClientRect();burst(e.clientX-p.left,e.clientY-p.top,$('#todays'))});
 function render(){
+  todays();
   $('#need').placeholder=T('my visa stamped','ประทับตราวีซ่าของฉัน');
   $('#for').placeholder=T('my visa, stamped before I asked','วีซ่าที่ประทับตราก่อนฉันจะขอ');
   $('#from').placeholder=T('your name or initials','ชื่อหรือชื่อย่อ');
@@ -687,8 +758,9 @@ function render(){
   $('#asksub').textContent=T('within 24 h','ภายใน 24 ชม.');
   $('#stamptop').textContent=T('STAMPED','ประทับตรา');$('#stamptop').setAttribute('font-family',lang==='th'?'Kanit,sans-serif':'Anton,Impact,sans-serif');
   $('#stampdate').textContent=lang==='th'?'22 ต.ค. 2569':'22 OCT 2026';$('#stampdate').setAttribute('font-family',lang==='th'?'Kanit,sans-serif':'Anton,Impact,sans-serif');
-  $('#arrowtxt').textContent=T('2+ WEEKS BACK','ย้อนกลับ 2 สัปดาห์+');$('#arrowtxt').setAttribute('font-family',lang==='th'?'Kanit,sans-serif':'Anton,Impact,sans-serif');$('#arrowtxt').setAttribute('font-size',lang==='th'?'42':'52');
+  $('#arrowtxt').textContent=T('15 DAYS BACK','ย้อนกลับ 15 วัน');$('#arrowtxt').setAttribute('font-family',lang==='th'?'Kanit,sans-serif':'Anton,Impact,sans-serif');$('#arrowtxt').setAttribute('font-size',lang==='th'?'42':'52');
   {const t=$('#arrowtxt');(document.fonts?document.fonts.ready:Promise.resolve()).then(()=>{try{const b=t.getBBox();const r=$('#arrowbox');r.setAttribute('x',b.x-18);r.setAttribute('width',b.width+36)}catch(e){}})}
+  {const pl=$('#postlbl');if(pl){pl.textContent=T('MY TODAY','วันนี้ของฉัน');pl.setAttribute('font-family',lang==='th'?'Kanit,sans-serif':'Anton,Impact,sans-serif')}}
   $('#moct').textContent=T('OCT','ต.ค.');$('#mnov').textContent=T('NOV','พ.ย.');
   $('#tick').textContent=fmt(STAMP);setDial(new Date());
   renderEx();renderOffers();renderDays();upd();
